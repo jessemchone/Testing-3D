@@ -53,11 +53,11 @@ public class UdemyGradeChallenge : MonoBehaviour
             gradesTotal += grade;
             //gradeAverage += grade;
 
-            gradeAverage = gradesTotal / numberOfGrades;
-
-            // The below didn't work, I think it's because it keeps re-calculating it each time (100 / 1 = 100 + 90 / 2 = 145 etc.)
+            // The below didn't work, I think it's because it keeps re-calculating it each time (100 / 1 = 100 + 90 / 2 = 145 etc.) It should also be outside of the loop
             //gradeAverage /= numberOfGrades;
         }
+
+        gradeAverage = gradesTotal / numberOfGrades;
     }
 
     // Update is called once per frame
