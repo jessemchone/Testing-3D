@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 527770340}
   - component: {fileID: 527770339}
   - component: {fileID: 527770338}
+  - component: {fileID: 527770342}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -408,6 +409,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527770342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527770337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82d418d84554c44a8cb1443d9fa09a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spells:
+  - name: Fire
+    spellID: 0
+    expGained: 10
+  - name: Ice
+    spellID: 1
+    expGained: 20
+  - name: Thunder
+    spellID: 2
+    expGained: 25
+  - name: Heal
+    spellID: 3
+    expGained: 30
+  playerEXP: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +993,6 @@ GameObject:
   - component: {fileID: 1753118834}
   - component: {fileID: 1753118833}
   - component: {fileID: 1753118832}
-  - component: {fileID: 1753118836}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1050,24 +1076,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1753118836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753118831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3759004a70ca844bb02eee391bb842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positions:
-  - {x: 0, y: 6, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 7, z: 0}
-  - {x: 2, y: 7, z: 0}
-  - {x: 2, y: 9, z: 0}
 --- !u!1 &1865975811
 GameObject:
   m_ObjectHideFlags: 0
