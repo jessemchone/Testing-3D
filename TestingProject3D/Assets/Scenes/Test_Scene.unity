@@ -434,7 +434,11 @@ MonoBehaviour:
   - name: Heal
     spellID: 3
     expGained: 30
-  playerEXP: 0
+  _names:
+  - Poison
+  - Fire
+  - Water
+  - Ice
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
