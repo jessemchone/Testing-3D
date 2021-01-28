@@ -456,7 +456,7 @@ MonoBehaviour:
   - Fire
   - Water
   - Ice
-  currentPlayerLevel: 4
+  currentPlayerLevel: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] string[] _names = new string[] { "Poison", "Fire", "Water", "Ice"};
 
     [SerializeField] private int currentPlayerLevel;
+
+    [SerializeField] Transform hitPoint;
+    [SerializeField] float areaOfAttack;
+    [SerializeField] LayerMask enemyLayer;
     
     private int playerEXP;
 
@@ -58,6 +62,9 @@ public class Player : MonoBehaviour
             CastAvailableSpell();
             //Debug.Log("Your experience is now " + playerEXP + ".");
         }
+
+        // Just messing around with detecting hits in melee combat. Remember that this should be an array
+        //Collider2D[] hits = Physics2D.OverlapCircleAll(hitPoint.position, areaOfAttack, enemyLayer);
     }
 
     private void CastRandomSpell()
@@ -86,5 +93,10 @@ public class Player : MonoBehaviour
                 //return;
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(hitPoint.position, areaOfAttack);
     }
 }
