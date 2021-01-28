@@ -19,11 +19,15 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int randomIndex = Random.Range(0, _spells.Length);
-
-            _spells[randomIndex].CastSpell();
-            playerEXP += _spells[randomIndex].expGained;
+            CastRandomSpell();
             Debug.Log("Your experience is now " + playerEXP + ".");
         }
+    }
+
+    private void CastRandomSpell()
+    {
+        int randomIndex = Random.Range(0, _spells.Length);
+        _spells[randomIndex].CastSpell();
+        playerEXP += _spells[randomIndex].expGained;
     }
 }
