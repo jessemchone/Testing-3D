@@ -11,6 +11,7 @@ public class TestScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //player = GameObject.Find("Player").GetComponent<Player>();
         player = FindObjectOfType<Player>();
         exp = player.PlayerEXP;
         Debug.Log("Test exp is " + exp);
@@ -23,6 +24,7 @@ public class TestScript : MonoBehaviour
         {
             exp = player.PlayerEXP;
             Debug.Log("Test exp is " + exp);
+            //GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] string[] _names = new string[] { "Poison", "Fire", "Water", "Ice"};
 
+    [SerializeField] private int currentPlayerLevel;
+    
     private int playerEXP;
 
     public static Player instance;
@@ -40,11 +42,11 @@ public class Player : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        for (int i = 0; i < _names.Length; i++)
+    {   
+        /*for (int i = 0; i < _names.Length; i++)
         {
             Debug.Log(_names[i]);
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -52,15 +54,37 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CastRandomSpell();
-            Debug.Log("Your experience is now " + playerEXP + ".");
+            //CastRandomSpell();
+            CastAvailableSpell();
+            //Debug.Log("Your experience is now " + playerEXP + ".");
         }
     }
 
     private void CastRandomSpell()
     {
         int randomIndex = Random.Range(0, _spells.Length);
-        _spells[randomIndex].CastSpell();
-        playerEXP += _spells[randomIndex].expGained;
+        
+        if (_spells[randomIndex].requiredLevel == currentPlayerLevel)
+        {
+            _spells[randomIndex].CastSpell();
+            playerEXP += _spells[randomIndex].expGained;
+            Debug.Log("Your experience is now " + playerEXP + ".");
+        }
+        else
+        {
+            Debug.Log("Your level is not high enough to cast the " + _spells[randomIndex].name + " spell!");
+        }
+    }
+
+    private void CastAvailableSpell()
+    {
+        foreach (Spell spell in _spells)
+        {
+            if (spell.requiredLevel == currentPlayerLevel)
+            {
+                spell.CastSpell();
+                //return;
+            }
+        }
     }
 }
