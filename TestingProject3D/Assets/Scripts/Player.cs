@@ -13,8 +13,9 @@ public class Player : MonoBehaviour
     [SerializeField] Transform hitPoint;
     [SerializeField] float areaOfAttack;
     [SerializeField] LayerMask enemyLayer;
-    
+
     private int playerEXP;
+    private int randomNumber;
 
     public static Player instance;
 
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         /*for (int i = 0; i < _names.Length; i++)
         {
             Debug.Log(_names[i]);
@@ -60,6 +61,8 @@ public class Player : MonoBehaviour
         {
             //CastRandomSpell();
             CastAvailableSpell();
+
+            UtilityHelper.ChangeColor(this.gameObject, Color.blue, randomNumber);
             //Debug.Log("Your experience is now " + playerEXP + ".");
         }
 
