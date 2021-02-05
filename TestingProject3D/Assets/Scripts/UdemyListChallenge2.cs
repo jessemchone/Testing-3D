@@ -24,7 +24,7 @@ public class UdemyListChallenge2 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 {
-                    GameObject newObject = Instantiate(gameObjectPrefabs[Random.Range(0, gameObjectPrefabs.Length)], new Vector3(Random.Range(-10f, 11f), Random.Range(-10f, 11f), 0f), Quaternion.identity);
+                    GameObject newObject = Instantiate(gameObjectPrefabs[Random.Range(0, gameObjectPrefabs.Length)], new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0f), Quaternion.identity);
                     spawnedObjects.Add(newObject);
                 }
             }
@@ -36,7 +36,17 @@ public class UdemyListChallenge2 : MonoBehaviour
                 obj.GetComponent<MeshRenderer>().material.color = Color.green;
             }
 
-            spawnedObjects.Clear();
+            //spawnedObjects.Clear();
+
+            Invoke("Deactivate", 5f);
        }
+    }
+
+    public void Deactivate()
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            obj.GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 }
