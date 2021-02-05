@@ -8,7 +8,7 @@ public class UdemyListChallenge2 : MonoBehaviour
 
     [SerializeField] List<GameObject> spawnedObjects = new List<GameObject>();
 
-    [SerializeField] int maxObjects = 5;
+    [SerializeField] int maxObjects = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class UdemyListChallenge2 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 {
-                    GameObject newObject = Instantiate(gameObjectPrefabs[Random.Range(0, gameObjectPrefabs.Length)], new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), 0f), Quaternion.identity);
+                    GameObject newObject = Instantiate(gameObjectPrefabs[Random.Range(0, gameObjectPrefabs.Length)], new Vector3(Random.Range(-10f, 11f), Random.Range(-10f, 11f), 0f), Quaternion.identity);
                     spawnedObjects.Add(newObject);
                 }
             }
