@@ -37,4 +37,16 @@ public static class UtilityHelper
 
         obj.GetComponent<MeshRenderer>().material.color = color;
     }
+
+    public static void ChangeColorAlternative(GameObject obj, Color color, bool random = false)
+    {
+        if (random)
+        {
+            obj.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value);
+        }
+        else
+        {
+            obj.GetComponent<MeshRenderer>().material.color = color;
+        }
+    }
 }

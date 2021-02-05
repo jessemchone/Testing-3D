@@ -60,9 +60,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //CastRandomSpell();
-            CastAvailableSpell();
+            //CastAvailableSpell();
 
-            UtilityHelper.ChangeColor(this.gameObject, Color.blue, randomNumber);
+            UtilityHelper.ChangeColorAlternative(this.gameObject, Color.blue, true);
             //Debug.Log("Your experience is now " + playerEXP + ".");
         }
 
