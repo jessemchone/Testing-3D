@@ -9,12 +9,9 @@ public class UdemyListChallenge2 : MonoBehaviour
     [SerializeField] List<GameObject> spawnedObjects = new List<GameObject>();
 
     [SerializeField] int maxObjects = 10;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    private float objectsSpawned = 0;
+    private bool InitColorChange;
 
     // Update is called once per frame
     void Update()
@@ -29,17 +26,17 @@ public class UdemyListChallenge2 : MonoBehaviour
                 }
             }
         }
-       else
-       {
+        else
+        {
             foreach (GameObject obj in spawnedObjects)
             {
                 obj.GetComponent<MeshRenderer>().material.color = Color.green;
             }
 
-            //spawnedObjects.Clear();
+            spawnedObjects.Clear();
 
-            Invoke("Deactivate", 5f);
-       }
+            //Invoke("Deactivate", 5f);
+        }
     }
 
     public void Deactivate()
